@@ -143,4 +143,52 @@ function analyzeDrawing(){
     }
 
     document.getElementById("level").textContent=level;
+    canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+
+    drawing = true;
+
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+
+    points.push({
+        x,
+        y,
+        time: Date.now()
+    });
+});
+
+canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault();
+
+    if (!drawing) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = "blue";
+
+    ctx.lineTo(x, y);
+    ctx.stroke();
+
+    points.push({
+        x,
+        y,
+        time: Date.now()
+    });
+});
+
+canvas.addEventListener("touchend", () => {
+    drawing = false;
+});
 }

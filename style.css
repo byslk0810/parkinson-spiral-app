@@ -19,6 +19,7 @@ canvas{
     background:#ffffff;
     border:1px solid #dfe5f2;
     border-radius:20px;
+    touch-action: none;
 }
 
 .buttons{
