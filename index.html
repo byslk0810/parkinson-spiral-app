@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson Spiral Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>การวิเคราะห์โรคพาร์กินสันจากการวาดก้นหอย</h1>
+    <p>เครื่องมือช่วยประเมินความเสี่ยงโรคพาร์กินสันเบื้องต้นจากการวาดก้นหอย</p>
+
+    <canvas id="canvas" width="700" height="700"></canvas>
+
+    <div class="buttons">
+        <button onclick="analyzeDrawing()">วิเคราะห์</button>
+        <button onclick="clearCanvas()">ล้าง</button>
+    </div>
+
+    <div class="result">
+        <h2>ผลการวิเคราะห์</h2>
+
+        <h1><span id="riskScore">0</span>/100</h1>
+
+        <p>Deviation : <span id="deviation">--</span></p>
+        <p>Speed : <span id="speed">--</span></p>
+        <p>Tremor : <span id="tremor">--</span></p>
+
+        <p id="level"></p>
+       <hr>
+
+<div class="info-card">
+    <h3>เกี่ยวกับโรคพาร์กินสัน</h3>
+    <p>
+        โรคพาร์กินสันเป็นโรคทางระบบประสาทที่ส่งผลต่อการเคลื่อนไหว
+        ทำให้เกิดอาการสั่น แข็งเกร็ง และเคลื่อนไหวช้าลง
+    </p>
+</div>
+
+<div class="info-card">
+    <h3>อาการที่อาจพบ</h3>
+    <p>
+        มือสั่น เคลื่อนไหวช้า กล้ามเนื้อแข็งเกร็ง
+        การทรงตัวลดลง และลายมือเปลี่ยนแปลง
+    </p>
+</div>
+
+<div class="info-card">
+    <h3>คำแนะนำเบื้องต้น</h3>
+    <p>
+        ผลลัพธ์นี้เป็นเพียงการประเมินเบื้องต้น
+        หากมีอาการผิดปกติควรปรึกษาแพทย์
+    </p>
+</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
